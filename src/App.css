@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  font-family:'Times New Roman', Times, serif; 
 }
 /* .page{
   min-height:100vh;
@@ -8,3 +9,119 @@
   width: 200rem;
   
 } */
+.productImage{
+  width: 12rem;
+  display:flexbox;
+  /* margin-bottom: ; */
+}
+.card-body{
+  float: right;
+  display: block;
+  margin-top: 1rem;
+  /* margin-left: 2.5em; */
+  /* position: relative; */
+}
+ /* Login Form */
+ .login-form{
+   position: relative;
+   border: 1rem;
+   border-color: white;
+ }
+
+ .prod-name{
+   color: palevioletred;
+ }
+ .prod-button{
+   color: palevioletred;
+ }
+ .prod-container{
+  background: white;
+  
+}
+.prod-details{
+  display: block;
+}
+
+.subscribeInput{
+  width: 50%;
+  height: 2rem;
+  border-radius: 0.2rem;
+  border:0em;
+  display:center;
+}
+.subscribe-btn{
+  border: #fff;
+  border-color: white;
+  border-width: 1em;
+}
+
+.cart-container {
+  background: none;
+  border: none;
+  fill: none;
+}
+.cart-btn{
+  color: palevioletred;
+  /* border: none; */
+  border-radius: 0.1rem;
+  border-color: palevioletred;
+  background: white;
+}
+.login-input{
+  /* position: absolute; */
+  padding-left: 1rem;
+  width: 25rem;
+  border-radius: 0.2rem;
+  border:0ch;
+  height: 2.2rem;
+}
+.profilePage{
+  background: url("https://images.pexels.com/photos/1229861/pexels-photo-1229861.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500");
+  color: white;
+  padding-bottom: 11rem;
+  padding-top: 3rem;
+}
+.profileDetails{
+  
+}
+.profileImage{
+  float: left;
+  margin: 2rem;
+  height: 15rem;
+  border:rgb(126, 186, 255)
+}
+.filter-btn{
+  margin:0.5rem;
+  margin-right: 2.5rem;
+  margin-left: 2.5rem;
+  border: 0;
+  border-radius: 0.2;
+  height: 2.5rem;
+}
+.filter-btns{
+  margin-right: 0.2rem;
+}
+.productInput{
+  width: 1rem;
+}
+.profile-btn{
+    color: #fff; 
+    padding: 6px; 
+    border-radius: 5px; 
+ 
+    background: palevioletred; 
+    border: 2.5px solid white; 
+    display: inline-block;
+  }
+  .profile-btn:hover {
+    background: #1C6EA4;
+  }
+.editProfile{
+  background-image: url("https://images.pexels.com/photos/1229861/pexels-photo-1229861.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500");
+  min-height: 100vh;
+  color:white;
+  padding-bottom: 11rem;
+  padding-top: 3rem;
+  padding-left: 4rem;
+  padding-right: 4rem;
+}

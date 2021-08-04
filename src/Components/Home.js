@@ -2,7 +2,8 @@ import React from 'react'
 import {makeStyles} from '@material-ui/core/styles';
 import { CssBaseline } from '@material-ui/core';
 import Header from './Header'
-function Home() {
+
+function Home({products}) {
     const useStyles = makeStyles((theme) => ({
         root: {
             backgroundImage: `url("https://images.pexels.com/photos/1229861/pexels-photo-1229861.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500")`,
@@ -17,6 +18,9 @@ function Home() {
             <div className="page">
             <CssBaseline />
             <Header />
+            {/* <br/>
+            <br/>
+            <br/> */}
             </div>
         </div>
     )

@@ -1,16 +1,11 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { AppBar, IconButton, Toolbar } from '@material-ui/core';
-import SortIcon from '@material-ui/icons/Sort'
-import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
+import { useHistory } from 'react-router-dom';
 
 function Header() {
+    let history = useHistory();
 
     const useStyles = makeStyles((theme) => ({
-        appbar: {
-            background: 'none',
-            textAlign: 'left',
-        },
         root: {
             display: 'flex',
             justifyContent: 'center',
@@ -20,9 +15,14 @@ function Header() {
             fontFamily: 'Nunito',
             // textAlign: 'center',
         },
-        icon: {
+        button: {
             color:'#fff',
-            fontSize: '2rem'
+            backgroundColor: '#FCC4D6',
+            fontSize: '1.5rem',
+            margin: '1.5px',
+            borderRadius: 3,
+            borderColor: 'rgba(0,0,0,0.08)',
+            borderWidth: 0.3,
         },
         appbarWrapper:{
             width: '80%',
@@ -32,38 +32,34 @@ function Header() {
             flexGrow: '2',
         },
         colorText: {
-            color:'#6827DA',
+            color:'#FCC4D6',
         },
         title: {
             fontSize: '3rem'
         },
-        down: {
-            color:'#6827DA',
-            fontSize: '2rem',
-        },
     }));
     const classes = useStyles()
 
+    function handleClick() {
+        history.push('/shop')
+    }
+
+    function handleLogIn() {
+        history.push('/log-in')
+    }
+
     return (
         <div className={classes.root}>
-            <AppBar className={classes.appbar} elevation={0} >
-                <Toolbar className={classes.appbarWrapper} >
-                <h1 className={classes.appbarTitle}>Jay's<span className={classes.colorText}>List</span></h1>
-                <IconButton >
-                <SortIcon className={classes.icon} />
-                </IconButton>
-                </Toolbar>
-            </AppBar>
             <div className={classes.container}>
             <h1 className={classes.title}>Welcome to <br/> Jay's<span className={classes.colorText}>List</span></h1>
             <br/>
             <br/>
             <br/>
-            <br/>
-            <IconButton >
-                <ArrowDropDownIcon className={classes.down}/>
-            </IconButton>
+            <button onClick={handleClick} type="button" className={classes.button}>View Products</button>
+            <button onClick={handleLogIn} type="button" class={classes.button}>Log in</button>
+            
             </div>
+            <br/>
         </div>
     );
 }
