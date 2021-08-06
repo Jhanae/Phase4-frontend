@@ -1,6 +1,11 @@
 import React from "react";
 import { useState, useEffect } from "react";
+import { useHistory } from "react-router-dom";
+
 function CartItem({ item, profileID }) {
+
+  let history = useHistory();
+
   const [cartItem, setCartItem] = useState([]);
   console.log(item);
   const API = "http://localhost:3000/cart_items";
@@ -22,7 +27,8 @@ function CartItem({ item, profileID }) {
     console.log(cartItem);
     fetch(` http://localhost:3000/cart_items/${filterProduct.id}`, {
       method: "DELETE",
-    }).then(window.alert("Product Deleted"));
+    }).then(window.alert("Product Deleted"))
+    .then((data) => history.push("/cart"))
   }
 
   return (

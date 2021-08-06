@@ -45,7 +45,7 @@ function Header() {
     }
 
     function handleLogIn() {
-        history.push('/log-in')
+        history.push('/signup')
     }
 
     return (

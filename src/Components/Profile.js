@@ -17,7 +17,7 @@ function Profile({profileID}) {
       }
       fetchProducts()
     }, [])
-    console.log(profiles)
+    console.log(profileID)
 
     function handleClick(){
         history.push('/update-profile')
@@ -32,15 +32,15 @@ function Profile({profileID}) {
             <div className="row">
             <h3 style={{'color':'palevioletred'}}>{profiles.username}</h3>
             <hr/>
-            <div className="col ">
+            <div className="col profileDeets">
                 <h3 className="profileDetails">Location:</h3>
                 <h3 className="profileDetails">About: </h3>
                 <h3 className="profileDetails">Gender: </h3>
             </div>
-            <div className="col">
-                <h5 className="profileDetails"> {profiles.location}</h5>
-                <h5 className="profileDetails"> {profiles.bio}</h5>
-                <h5 className="profileDetails"> {profiles.gender}</h5>
+            <div className="col profileDeets">
+                <h3 className="profileDetails"> {profiles.location}</h3>
+                <h3 className="profileDetails"> {profiles.bio}</h3>
+                <h3 className="profileDetails"> {profiles.gender}</h3>
             </div>
             </div>
             <br/><br/><br/>

@@ -36,7 +36,9 @@
  }
  .prod-container{
   background: white;
-  
+  padding: 4rem;
+  margin-left: 3rem;
+  margin-right: 3rem;
 }
 .prod-details{
   display: block;
@@ -51,8 +53,13 @@
 }
 .subscribe-btn{
   border: #fff;
-  border-color: white;
+  margin-left: 45%;
+  border-radius: 0.2rem;
+  font-size: medium;
   border-width: 1em;
+  background: palevioletred;
+  width: 10rem;
+  height: 1.5rem;
 }
 
 .cart-container {
@@ -100,6 +107,7 @@
 }
 .filter-btns{
   margin-right: 0.2rem;
+  background-color: palevioletred;
 }
 .productInput{
   width: 1rem;
@@ -124,4 +132,22 @@
   padding-top: 3rem;
   padding-left: 4rem;
   padding-right: 4rem;
+}
+.profileDeets{
+  /* margin-left: 0%; */
+}
+.separator{
+  display: flex;
+  align-items: center;
+}
+
+.separator h5{
+  padding: 0 2rem; /* creates the space */
+}
+
+.separator .line{
+  flex: 1;
+  height: 0.5px;
+  background-color: #fff;
+  width: 1rem;
 }

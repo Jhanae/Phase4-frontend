@@ -43,9 +43,9 @@ function ProductContainer({products, profileID}) {
     
     return (
         <div className="prod-container ">
-            <br/><br/><br/>
+            <br/>
             <h1 className={classes.title}>All <span className={classes.colorText}>Products</span></h1><br/>
-            <Filter setType={setType} setSearch={setSearch}/>
+            <Filter setType={setType} setSearch={setSearch}/><br/>
             <div className="row">
                 {product}
             </div>

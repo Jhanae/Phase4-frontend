@@ -1,9 +1,11 @@
 import React from 'react'
 import {makeStyles} from '@material-ui/core/styles';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useHistory } from 'react-router-dom';
 
+function LogInForm({setUserID, findProfile, setProfileID}) {
 
-function LogIn() {
+    let history = useHistory();
 
     const [password, setPassword] = useState("")
     const [email, setEmail] = useState("")
@@ -26,31 +28,36 @@ function LogIn() {
             fontSize: '3rem',
             color: '#fff'
         },
+        button: {
+            color:'#fff',
+            backgroundColor: '#FCC4D6',
+            fontSize: '1.5rem',
+            margin: '1.5px',
+            borderRadius: 3,
+            borderColor: 'rgba(0,0,0,0.08)',
+            borderWidth: 0.3,
+        },
     }));
     const classes = useStyles()
+
     async function handleLogIn(e) {
         e.preventDefault();
-    setIsLoading(true);
-    async function login(){
-     const res = await fetch("/login", {
+        fetch("http://localhost:3000/login", {
         method: "POST",
         headers: {
-          "Content-Type": "application/json",
+            "Content-type": "application/json",
         },
-        body: JSON.stringify({ email, password }),
-      })
-      if(res.ok){
-        setIsLoading(false);
-        const user = await res.json()
-        // onLogin(user)
-      } else {
-        const err = await res.json()
-        setErrors(err.errors)
-      }
-      };
-    login()
-  };
+        body: JSON.stringify({email, password: password}),
+        })
+        .then((response) => response.json())
+        .then((data) => setProfileID(data.user.id))
+        .then(window.alert("Login successful"))
+        .then(() => history.push('/profile'))
+    }
 
+    function handleSubmit(){
+        history.push('/signup')
+    }
 
     return (
         <div className={classes.root}>
@@ -75,12 +82,22 @@ function LogIn() {
                 <input type="checkbox" label="Check me out" />
                 <label>&nbsp;&nbsp;{"Check me out"}</label>
             </div>
-            <button onSubmit={(e) => handleLogIn(e)} variant="primary" type="submit">
+            <button onClick={(e) => handleLogIn(e)} className={classes.button} variant="primary" type="submit">
                 Submit
             </button>
             </form>
+            <br/>
+            <div class="separator">
+            <div class="line"></div>
+            <h5>OR</h5>
+            <div class="line"></div>
+            </div>
+            <br/>
+            <h6>Don't have an account?</h6>
+            <button onClick={(e) => handleSubmit(e)} type="button" className={classes.button}>Sign Up</button>
+
         </div>
     )
 }
 
-export default LogIn
+export default LogInForm

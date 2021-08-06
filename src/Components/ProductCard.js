@@ -16,15 +16,14 @@ export default function ProductCard({product, profileID}) {
             product_id: productID,
         })
     }).then(response => response.json())
-    .then(() => history.push('/cart'))
+    // .then(() => history.push('/cart'))
   }
   
   return (
-    <div className="container" style={{width: "18rem"}}>
+    <div className="container productCard" style={{width: "18rem"}}>
     <div className="col">
     <img src={product.image} alt={product.name}/>
     </div>
-    <br/>
     <div className="prod-details row">
       <h3 className="prod-name">{product.name}</h3>
       <p className="prod-name">${product.price}.99</p>
